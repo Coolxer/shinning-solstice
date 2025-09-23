@@ -1,6 +1,8 @@
 media_folder: src/assets/images
 public_folder: /media
 
+connect-src: "https://api.cloudflare.com"
+
 slug:
   encoding: 'ascii'
   clean_accents: true
