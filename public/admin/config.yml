@@ -1,0 +1,34 @@
+media_folder: src/assets/images
+public_folder: /media
+
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
+
+backend:
+  name: github
+  repo: "coolxer/shinning-solstice"
+  branch: main
+  skip_ci: true
+
+collections:
+  - name: posts
+    label: Posty
+    label_singular: Post
+    folder: src/posts
+    create: true
+    media_folder: /assets/images/posts
+    public_folder: /media/posts
+    fields:
+      - name: title
+        label: Tytul
+      - name: description
+        label: Opis
+        widget: text
+        required: false
+      - name: date
+        label: Data
+        widget: datetime
+        time_format: false
+        required: false
