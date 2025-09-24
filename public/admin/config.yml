@@ -3,6 +3,12 @@ public_folder: /media
 
 connect-src: "https://api.cloudflare.com"
 
+# Better Decap + Bridge logo (optional)
+logo_url: https://decapbridge.com/decapcms-with-bridge.svg
+
+# Add site links in DecapCMS (optional)
+site_url: https://shinning-solstice.pages.de
+
 slug:
   encoding: 'ascii'
   clean_accents: true
@@ -14,6 +20,19 @@ backend:
   branch: main
   skip_ci: true
   base_url: "https://sveltia-cms-auth.lukasz-milos-dev.workers.dev/"
+
+  # bridge
+  identity_url: https://auth.decapbridge.com/sites/2a4feae4-6f8f-4023-bda9-48d71c9add21
+  gateway_url: https://gateway.decapbridge.com
+
+  # Quickly see who did what (optional)
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
 collections:
   - name: posts
